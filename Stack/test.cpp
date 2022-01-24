@@ -1,11 +1,8 @@
 #include "implementation.cpp"
-#include <array>
 
 int main() {
 
     stack<int> st;
-    const int size = 5;
-    std::array<int,5> arr;
 
     st.push(1);
     st.push(2);
