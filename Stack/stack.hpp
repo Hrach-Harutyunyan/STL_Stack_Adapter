@@ -6,7 +6,7 @@ class stack
 {
 private:
     int _m_sp;
-    int _m_max_size = 100;
+    const int _m_max_size = 100;
     std::forward_list<T> _m_fl;
 public:
     stack();
