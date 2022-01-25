@@ -1,7 +1,7 @@
 #include "stack.hpp"
 
 template <typename T>
-stack<T>::stack() : _m_sp(0) {};
+stack<T>::stack() : _m_sp(0),_m_max_size(100) {};
 
 template <typename T>
 stack<T>::stack(const stack& st) {
@@ -15,8 +15,16 @@ stack<T>::~stack() {};
 
 template <typename T>
 void stack<T>::push(const T& value) {
-    _m_fl.push_front(value);
-    ++_m_sp;
+    try{
+        if(_m_max_size < 100) {
+            _m_fl.push_front(value);
+            ++_m_sp;
+        }else {
+            throw std::exception();
+        }
+    }
+    catch(const std::exception& e) {
+        std::cerr << e.what() << "\t'Stack is full!'\n";
 }
 
 template <typename T>
