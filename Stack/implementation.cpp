@@ -16,7 +16,7 @@ stack<T>::~stack() {};
 template <typename T>
 void stack<T>::push(const T& value) {
     try{
-        if(_m_max_size < 100) {
+        if(_m_sp < 100) {
             _m_fl.push_front(value);
             ++_m_sp;
         }else {
